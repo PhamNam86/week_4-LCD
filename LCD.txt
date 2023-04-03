@@ -1,0 +1,20 @@
+#include <16f887.h> 
+#device *=16 ADC=8
+#FUSES NOWDT, HS, NOPUT, NOBROWNOUT,NOPROTECT, NOLVP 
+#use delay(clock=16M)
+#include <luutinh.h>
+#include <LCD.h>
+
+void main ()
+{
+	set_tris_b(0b00000000); 
+	set_tris_d(0b00000000); 
+	set_tris_a(0b11111111); 
+	output_b(0x00);	
+	LCD_INIT();
+	lcd_gotoxy(2,1);
+	printf(lcd_putc,"",);
+	lcd_gotoxy(1,2);
+	printf(lcd_putc,"",);
+	
+}
